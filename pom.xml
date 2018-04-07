@@ -17,6 +17,8 @@
         <servlet.version>3.1.0</servlet.version>
         <jstl.version>1.2</jstl.version>
         <spring.version>4.3.14.RELEASE</spring.version>
+        <javax.validation.version>2.0.1.Final</javax.validation.version>
+        <hibernate.validation.version>6.0.9.Final</hibernate.validation.version>
         <aspectj.version>1.8.11</aspectj.version>
         <mysql.version>6.0.6</mysql.version>
         <log4j.version>1.2.17</log4j.version>
@@ -77,6 +79,19 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
             <version>${spring.version}</version>
+        </dependency>
+
+        <!-- Validation support -->
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>${javax.validation.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>${hibernate.validation.version}</version>
         </dependency>
 
         <!-- AspectJ support -->

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <html>
 <head>
@@ -11,7 +12,7 @@
 <div class="site-block">
     <div class="content-block" style="display: flex">
         <div class="login-container">
-            <form name="user" action="/login" method="POST">
+            <form:form commandName="user" action="/login" method="POST">
                 <table>
                     <tr>
                         <td colspan="2" align="center">
@@ -22,16 +23,26 @@
                         <td><br></td>
                     </tr>
                     <tr>
-                        <td colspan="2">Login</td>
+                        <td colspan="2">
+                            <form:label path="login">Login</form:label>
+                        </td>
                     </tr>
                     <tr>
-                        <td colspan="2"><input class="my-input" type="text" name="login"></td>
+                        <td colspan="2">
+                            <form:input cssClass="my-input" path="login"/>
+                            <form:errors cssStyle="color: red" path="login"/>
+                        </td>
                     </tr>
                     <tr>
-                        <td colspan="2">Password</td>
+                        <td colspan="2">
+                            <form:label path="password">Password</form:label>
+                        </td>
                     </tr>
                     <tr>
-                        <td colspan="2"><input class="my-input" type="password" name="password"></td>
+                        <td colspan="2">
+                            <form:password cssClass="my-input" path="password"/>
+                            <form:errors cssStyle="color: red" path="password"/>
+                        </td>
                     </tr>
                     <tr>
                         <td><br></td>
@@ -45,7 +56,7 @@
                         </td>
                     </tr>
                 </table>
-            </form>
+            </form:form>
         </div>
     </div>
 </div>

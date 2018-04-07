@@ -1,12 +1,21 @@
 package ua.company.myroniuk.entity;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
+
 /**
  * @author Vitalii Myroniuk
  */
 public class User {
+
+    @NotEmpty(message = "*")
     private String login;
+
+    @Size(min = 4, message = "*")
     private String password;
+
     private String name;
+
     private Integer age;
 
     public String getLogin() {
