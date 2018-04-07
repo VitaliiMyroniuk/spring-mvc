@@ -25,7 +25,7 @@ public class HomeController {
     }
 
     @RequestMapping(path = "/login", method = RequestMethod.POST)
-    public String login(@ModelAttribute(name = "user") User user, Model model) {
+    public String userPage(@ModelAttribute(name = "user") User user, Model model) {
         model.addAttribute("user", user);
         return "home";
     }

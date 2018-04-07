@@ -5,6 +5,7 @@
     <title>Home page</title>
 </head>
 <body>
+    ${message} <br>
     Hello, ${user.login}! <br>
     Your password: ${user.password}
 </body>

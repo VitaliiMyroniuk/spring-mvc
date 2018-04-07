@@ -28,4 +28,13 @@
         <property name = "suffix" value = ".jsp" />
     </bean>
 
+    <!-- Interceptor -->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/*"/>
+            <bean class="ua.company.myroniuk.interceptor.CheckUserInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
+
 </beans>
