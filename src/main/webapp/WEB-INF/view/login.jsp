@@ -2,6 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 <html>
 <head>
@@ -24,7 +25,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <form:label path="login">Login</form:label>
+                            <form:label path="login"><spring:message code="login"/></form:label>
                         </td>
                     </tr>
                     <tr>
@@ -35,7 +36,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <form:label path="password">Password</form:label>
+                            <form:label path="password"><spring:message code="password"/></form:label>
                         </td>
                     </tr>
                     <tr>
