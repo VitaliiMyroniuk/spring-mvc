@@ -8,10 +8,10 @@ import javax.validation.constraints.Size;
  */
 public class User {
 
-    @NotEmpty(message = "*")
+    @NotEmpty(message = "{empty.login.error}")
     private String login;
 
-    @Size(min = 4, message = "*")
+    @Size(min = 4, message = "{password.size.error}")
     private String password;
 
     private String name;
