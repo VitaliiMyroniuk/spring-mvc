@@ -11,13 +11,17 @@
 </head>
 <body>
 <div class="site-block">
+    <div class="header">
+        <jsp:include page="/WEB-INF/view/header.jsp"/>
+    </div>
+
     <div class="content-block" style="display: flex">
         <div class="login-container">
             <form:form commandName="user" action="/login" method="POST">
                 <table>
                     <tr>
                         <td colspan="2" align="center">
-                            <h2>Authentication</h2>
+                            <h2><spring:message code="authentication"/></h2>
                         </td>
                     </tr>
                     <tr>
@@ -50,10 +54,10 @@
                     </tr>
                     <tr>
                         <td>
-                            <input class="my-button" type="submit" value="Sign in">
+                            <input class="my-button" type="submit" value="<spring:message code="sign.in"/>">
                         </td>
                         <td style="text-align: right">
-                            <a href="/registration">Sign up</a>
+                            <a href="/registration"><spring:message code="sign.up"/></a>
                         </td>
                     </tr>
                 </table>

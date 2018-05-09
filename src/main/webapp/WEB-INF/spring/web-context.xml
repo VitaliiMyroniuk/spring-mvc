@@ -37,10 +37,26 @@
         </mvc:interceptor>
     </mvc:interceptors>
 
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/*" />
+            <ref bean="localeChangeInterceptor" />
+        </mvc:interceptor>
+    </mvc:interceptors>
+
     <!-- Localization -->
     <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
         <property name="basename" value="/resources/locales/message"/>
         <property name="defaultEncoding" value="UTF-8"/>
+    </bean>
+
+    <!-- Changing the language -->
+    <bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+        <property name="paramName" value="lang"/>
+    </bean>
+
+    <bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+        <property name="defaultLocale" value="en_GB"/>
     </bean>
 
 </beans>
