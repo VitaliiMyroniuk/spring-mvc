@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import ua.company.myroniuk.entity.User;
 import javax.validation.Valid;
 
@@ -33,12 +34,14 @@ public class HomeController {
     }
 
     @RequestMapping(path = "/login", method = RequestMethod.POST)
-    public String userPage(@Valid @ModelAttribute(name = "user") User user, BindingResult bindingResult, Model model) {
+    public String userPage(@Valid @ModelAttribute(name = "user") User user,
+                           BindingResult bindingResult,
+                           RedirectAttributes redirectAttributes) {
         if (bindingResult.hasErrors()) {
             return "login";
         }
-        model.addAttribute("user", user);
-        return "home";
+        redirectAttributes.addFlashAttribute("user", user);
+        return "redirect:/home";
     }
 
     @RequestMapping(path="/json/get-user/{login}", method = RequestMethod.GET, produces = "application/json")
