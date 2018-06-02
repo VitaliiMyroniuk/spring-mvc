@@ -17,7 +17,7 @@
 
     <div class="content-block" style="display: flex">
         <div class="login-container">
-            <form:form commandName="user" action="/login" method="POST">
+            <form:form modelAttribute="user" action="/login" method="POST">
                 <table>
                     <tr>
                         <td colspan="2" align="center">
