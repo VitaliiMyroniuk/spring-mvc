@@ -8,6 +8,8 @@
 <head>
     <title>Login page</title>
     <link href="/resources/css/style.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/resources/js/check_password_strength.js"></script>
 </head>
 <body>
 <div class="site-block">
@@ -45,12 +47,16 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <form:password cssClass="my-input" path="password"/>
+                            <form:password cssClass="my-input" path="password" onkeyup="checkPasswordStrength()"/>
                             <form:errors cssStyle="color: red" path="password"/>
                         </td>
                     </tr>
                     <tr>
-                        <td><br></td>
+                        <td colspan="2">
+                            <span id="strength-value" style="float: right">
+                                <br>
+                            </span>
+                        </td>
                     </tr>
                     <tr>
                         <td>

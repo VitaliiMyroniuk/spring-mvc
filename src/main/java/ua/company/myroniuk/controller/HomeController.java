@@ -21,6 +21,9 @@ import javax.validation.Valid;
  */
 @Controller
 public class HomeController {
+    private static final Integer WEAK_STRENGTH = 1;
+    private static final Integer MIDDLE_STRENGTH = 5;
+    private static final Integer STRONG_STRENGTH = 7;
 
     @RequestMapping(path = "/home", method = RequestMethod.GET)
     public String homePage() {
@@ -60,6 +63,21 @@ public class HomeController {
             return ResponseEntity.notFound().build();
         }
         return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @RequestMapping(path="/check_password_strength", method = RequestMethod.GET, produces = {"text/html; charset-UTF-8"})
+    @ResponseBody
+    public String checkPasswordStrength(@RequestParam String password) {
+        int length = password.length();
+        if (WEAK_STRENGTH <= length &&  length < MIDDLE_STRENGTH) {
+            return "weak";
+        } else if (MIDDLE_STRENGTH <= length &&  length < STRONG_STRENGTH) {
+            return "middle";
+        } else if (STRONG_STRENGTH <= length) {
+            return "strong";
+        } else {
+            return "<br>";
+        }
     }
 
 }
