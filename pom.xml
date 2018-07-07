@@ -27,6 +27,7 @@
         <jackson.version>2.9.3</jackson.version>
         <commons-fileupload.version>1.3.3</commons-fileupload.version>
         <commons-io.version>2.6</commons-io.version>
+        <itext.version>2.1.7</itext.version>
     </properties>
 
     <dependencies>
@@ -162,6 +163,13 @@
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
             <version>${commons-io.version}</version>
+        </dependency>
+
+        <!-- Pdf view support -->
+        <dependency>
+            <groupId>com.lowagie</groupId>
+            <artifactId>itext</artifactId>
+            <version>${itext.version}</version>
         </dependency>
 
     </dependencies>

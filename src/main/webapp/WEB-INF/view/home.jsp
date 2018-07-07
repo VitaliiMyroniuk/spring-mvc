@@ -8,7 +8,10 @@
 <body>
     ${message} <br>
     Hello, ${user.login}! <br>
-    Your password: ${user.password}
+    Your password: ${user.password} <br>
+    <h4>
+        <a href="/download_pdf">Download pdf document</a>
+    </h4>
 
     <form:form modelAttribute="file" enctype="multipart/form-data" action="/upload_file" method="POST">
         <table>
